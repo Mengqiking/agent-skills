@@ -1,0 +1,6 @@
+interface:
+  display_name: "External Share Sanitizer"
+  short_description: "Review and sanitize files before external sharing"
+  default_prompt: "Use $external-share-sanitizer to create a sanitized copy and change manifest for these explicitly scoped files before I share them externally."
+policy:
+  allow_implicit_invocation: true

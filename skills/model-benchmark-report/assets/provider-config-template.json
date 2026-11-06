@@ -1,0 +1,12 @@
+{
+  "format": "agent-skills/provider-plan-v1",
+  "purpose": "Planning data only; adapt to the selected runner schema before use",
+  "provider_id": "example-provider",
+  "base_url": "https://api.example.invalid/v1",
+  "model": "example-model",
+  "protocol": "openai-compatible",
+  "api_key_env": "EXAMPLE_PROVIDER_API_KEY",
+  "input_token_semantics": "unknown",
+  "documentation_url": null,
+  "verified_runner": null
+}

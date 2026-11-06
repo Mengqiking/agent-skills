@@ -1,0 +1,6 @@
+interface:
+  display_name: "模型性能测试与报告"
+  short_description: "规划并复核 LLM 性能测试、缓存指标与证据化报告"
+  default_prompt: "Use $model-benchmark-report to plan this benchmark and produce an evidence-based report."
+policy:
+  allow_implicit_invocation: true

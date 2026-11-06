@@ -1,0 +1,6 @@
+interface:
+  display_name: "供应商 API 接入评审"
+  short_description: "梳理供应商 API 接入、免费连通性与可执行测试材料"
+  default_prompt: "Use $provider-api-intake to review this provider API and prepare a safe connectivity plan."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,30 @@
+{
+  "format": "agent-skills/benchmark-plan-v1",
+  "purpose": "Planning data only; not an executable runner configuration",
+  "execution_authorized": false,
+  "budget": {
+    "currency": null,
+    "max_amount": null,
+    "max_requests": null
+  },
+  "matrix": {
+    "stream": true,
+    "input_tokens": [
+      1024
+    ],
+    "concurrency": [
+      1
+    ],
+    "samples_per_group": 3,
+    "max_output_tokens": 64
+  },
+  "timeout_seconds": 180,
+  "max_retries": 0,
+  "cache": {
+    "enabled": false,
+    "cold_start_requests": 1,
+    "warm_requests": 4,
+    "unique_prefix_per_run": true
+  },
+  "verified_runner": null
+}
