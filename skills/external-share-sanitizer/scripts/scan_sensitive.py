@@ -246,7 +246,8 @@ class Scope:
             if relative in {"", "."}:
                 relative = "."
         if member is not None:
-            return f"{relative}!{member.replace('\\', '/')}"
+            normalized_member = member.replace("\\", "/")
+            return f"{relative}!{normalized_member}"
         return relative
 
 

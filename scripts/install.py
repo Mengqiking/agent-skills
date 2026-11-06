@@ -24,14 +24,16 @@ def is_link(path: Path) -> bool:
 
 def install(names: list[str], destination: Path, source_root: Path = SKILLS_ROOT) -> list[Path]:
     destination = Path(os.path.abspath(destination.expanduser()))
+    if is_link(destination):
+        raise ValueError("The destination is a link/reparse point.")
+    # Canonicalize both sides: Windows short names and macOS /var aliases
+    # otherwise make a nested destination appear to be outside the source.
+    destination = destination.resolve()
     source_root = source_root.resolve()
     names = list(dict.fromkeys(names))
     available = {p.name for p in source_root.iterdir() if p.is_dir() and (p / "SKILL.md").is_file()}
     if not names or any(name not in available for name in names):
         raise ValueError("Choose an available skill name.")
-    for ancestor in (destination, *destination.parents):
-        if is_link(ancestor):
-            raise ValueError("The destination or an ancestor is a link/reparse point.")
     if destination.is_relative_to(source_root):
         raise ValueError("Installation destination must be outside the source skills directory.")
     targets = [destination / name for name in names]

@@ -23,7 +23,7 @@ class InstallationTests(unittest.TestCase):
 
     def test_selected_skill_is_copied(self):
         targets = INSTALLER.install(["alpha"], self.destination, self.source)
-        self.assertEqual(targets, [self.destination / "alpha"])
+        self.assertEqual(targets, [(self.destination / "alpha").resolve()])
         self.assertEqual((targets[0] / "SKILL.md").read_bytes(), (self.source / "alpha" / "SKILL.md").read_bytes())
         self.assertFalse((self.destination / "beta").exists())
 
