@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖音草稿与发布排期"
+  short_description: "准备短视频草稿，维护发布排期，核对实际状态并避免重复投稿"
+  default_prompt: "使用 $douyin-creator-workflow 保存并核验抖音草稿，更新本地排期和作品状态。"
