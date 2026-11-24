@@ -2,7 +2,7 @@
 
 Reusable agent skills for everyday engineering workflows. The first collection covers API onboarding, evidence-based model benchmarking, and reviewing files before external sharing.
 
-可分别安装的 Agent 工作流集合，涵盖 API 接入、模型评测、资料外发和短视频草稿。
+可分别安装的 Agent 工作流集合，涵盖 API 接入、模型评测、资料外发、短视频草稿和睡眠补录。
 
 ## 当前技能
 
@@ -12,6 +12,7 @@ Reusable agent skills for everyday engineering workflows. The first collection c
 | [model-benchmark-report](skills/model-benchmark-report/SKILL.md) | 测试计划、TTFT/缓存/错误率、已有结果分析 | 流程、指标说明、工具无关模板；不内置请求执行器 |
 | [external-share-sanitizer](skills/external-share-sanitizer/SKILL.md) | 外发文件初筛、语义审查、脱敏副本 | 只读扫描器、行为测试、审查清单 |
 | [douyin-creator-workflow](skills/douyin-creator-workflow/SKILL.md) | 抖音预览、存草稿、状态核验及本地排期 | 排期与去重说明、词汇短视频制作验收 |
+| [xiaomi-sleep-calendar](skills/xiaomi-sleep-calendar/SKILL.md) | 将小米运动健康的睡眠补录到 Google 日历 | 查缺、手机镜像速查、批量写入和回读 |
 
 适合支持 `SKILL.md` 的 agent 环境；`agents/openai.yaml` 提供 Codex 展示信息和隐式调用设置。Skill 提供指引，不是权限隔离或强制执行系统，不会自行获得 API、文件系统或网络访问权限。
 
@@ -49,6 +50,7 @@ python scripts/install.py --dest /path/to/agent/skills
 | “测试这个模型，预算 20 元，最多 10 次请求。” | 先核对执行器、价格和请求上限，再按授权执行；缺工具或预算证据时只交付计划 |
 | “这些日志要发给供应商，生成脱敏副本和删改清单。” | 新目录中的副本、初筛结果、语义审查和剩余人工检查 |
 | “把这条视频存进抖音草稿，插到下一档。” | 已核验的草稿状态和本地排期，后续按作品 ID 去重 |
+| “用 `$xiaomi-sleep-calendar` 把最近缺失的睡眠补到 Google 日历。” | 按既有格式补齐缺失日期，并核验时间、标题和标签 |
 
 前两个 Skill 可以单独安装。没有另一个 Skill 时，会保留当前流程的边界并说明缺失能力。
 

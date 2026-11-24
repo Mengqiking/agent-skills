@@ -1,0 +1,4 @@
+interface:
+  display_name: "小米睡眠补录到 Google 日历"
+  short_description: "从小米运动健康读取缺失日期，按已有记录格式补录并逐条核验"
+  default_prompt: "用 $xiaomi-sleep-calendar 把最近缺失的睡眠补到 Google 日历，沿用之前的格式。"
